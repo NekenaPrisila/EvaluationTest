@@ -39,6 +39,9 @@ CREATE TABLE Utilisateur(
 CREATE TABLE Reservation(
    id SERIAL,
    reference VARCHAR(50) ,
+   date_reservation TIMESTAMP NOT NULL,
+   heure_a_reserver TIME NOT NULL,
+   dure_reserver TIME NOT NULL,
    id_espace_travail INTEGER NOT NULL,
    id_utilisateur INTEGER NOT NULL,
    numero_tel_utilisateur BIGINT NOT NULL,
@@ -49,7 +52,8 @@ CREATE TABLE Reservation(
 
 CREATE TABLE Paiement(
    id SERIAL,
-   date_paiement DATE,
+   date_paiement TIMESTAMP NOT NULL,
+   referencement VARCHAR(50)  NOT NULL,
    id_reservation INTEGER NOT NULL,
    reference_reservation VARCHAR(50)  NOT NULL,
    PRIMARY KEY(id),
